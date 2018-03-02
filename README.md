@@ -1,17 +1,17 @@
-# xy_image_optimu.js v1.0.0
+# xy_sheets.js v1.0.0
 迅游sheets处理套件，**包含excel，word，txt读写         迅游版权所有       Create By Pwh**
 
 ## 使用方法
 
 ```html
-<script src="js/xy_excel.js"></script>
+<script src="js/xy_sheets.js"></script>
     <script type="text/javascript">
         window.onload = function(){
             var data = {
                 id:"file", //上传控件id
                 fun:"fun", //回调函数名
-                rows:2,    //获取第几行的数据（获取每行则不填）
-                cols:1,    //获取第几列的数据（获取每列则不填）
+                // rows:2,    //获取第几行的数据，支持数组获取多行（获取每行则不填）
+                cols: [1, 2] //获取第几列的数据，支持数组获取多列（获取每列则不填）
             }
             var sheet = new sheets(data);
             sheet.importExcel();
