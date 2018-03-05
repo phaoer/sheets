@@ -1,3 +1,4 @@
+/** xy_sheets-v1.0.1 By https://github.com/phaoer/sheets */
         var oHead = document.getElementsByTagName('head')[0];
 
         var oScript = document.createElement("script");
@@ -48,7 +49,7 @@
             var _this = this;
             document.getElementById(this.id).onchange = function() {
                 var rABS = false,
-                    sheetData, list, arrs = colsName = colsArrs = rowsArrs = [];
+                    sheetData, list, arrs = colsName = colsArrs = rowsArrs = [],rowsJson=colsJson={};
                 if (!this.files) { return; }
                 var f = this.files[0]; {
                     var reader = new FileReader();
@@ -73,7 +74,9 @@
                                 for (var k = 0; k < _this.rows.length; k++) {
                                     rowsArrs = [];
                                     rowsArrs.push(sheetData[_this.rows[k] - 1]);
+                                    rowsJson[_this.rows[k]] = rowsArrs
                                 }
+                                list = rowsJson;
                             }
                         } else if (_this.rows == undefined && _this.cols != undefined) {
                             list = [];
@@ -95,8 +98,9 @@
                                         }
                                         colsArrs.push(arrs[_this.cols[k] - 1]);
                                     }
-                                    list.push(colsArrs);
+                                    colsJson[_this.cols[k]] = colsArrs;
                                 }
+                                list=colsJson;
                             }
                         } else {
                             for (var j in sheetData[_this.rows - 1]) {
