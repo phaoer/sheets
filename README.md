@@ -1,5 +1,5 @@
 # xy_sheets.js v1.0.0
-迅游sheets处理套件，**包含excel，word，txt读写         迅游版权所有       Create By Pwh**
+迅游sheets处理套件，**包含excel，word，txt读写 Create By Pwh**
 
 ## 使用方法
 
